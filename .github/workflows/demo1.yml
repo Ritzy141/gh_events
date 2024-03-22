@@ -1,20 +1,9 @@
 name: Events Demo 1
 on: 
-  workflow_dispatch:
   pull_request:
     types:
       - opened
-    branches:
-      - main #main
-      - 'dev-*' #dev-new dev-this-is-new etc..
-      - 'feat/**' #feat/new feat/new/button etc..  
-  push:
-    branches:
-      - main #main
-      - 'dev-*' #dev-new dev-this-is-new etc..
-      - 'feat/**' #feat/new feat/new/button etc..
-    paths-ignore:
-      - '.github/workfows/*' #only fire this push workflow if a file in this folder hasn't changed
+  workflow_dispatch:
 jobs:
   deploy:
     runs-on: ubuntu-latest
